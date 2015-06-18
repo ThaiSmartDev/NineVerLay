@@ -65,6 +65,11 @@ class LineAPI(object):
 
         self.transport.open()
         self.transport_in.open()
+        """
+        After login, make `client` and `client_in` instance
+        to communicate with LINE server
+        """
+        #raise Exception("Code is removed because of the request of LINE corporation")
 
     def updateAuthToken(self):
         """

@@ -27,7 +27,7 @@ class LineClient(LineAPI):
     rooms    = []
     groups   = []
 
-    def __init__(self, id=None, password=None, authToken=None, is_mac=True, com_name="PowerDD"):
+    def __init__(self, id=None, password=None, authToken=None, is_mac=True, com_name="carpedm20"):
         """Provide a way to communicate with LINE server.
 
         :param id: `NAVER id` or `LINE email`
@@ -65,9 +65,10 @@ class LineClient(LineAPI):
 
         if authToken:
             self.authToken = self._headers['X-Line-Access'] = authToken
-            self.tokenLogin()
-            self.ready()
 
+            self.tokenLogin()
+	    #print authToken
+            self.ready()
         else:
             if EMAIL_REGEX.match(id):
                 self.provider = Provider.LINE # LINE
