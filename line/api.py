@@ -119,7 +119,8 @@ class LineAPI(object):
             print "Enter PinCode '%s' to your mobile phone in 2 minutes"\
                     % self._pinCode
 
-            raise Exception("Code is removed because of the request of LINE corporation")
+            return True
+            #raise Exception("Code is removed because of the request of LINE corporation")
         else:
             self.authToken =self._headers['X-Line-Access'] = msg.authToken
 
